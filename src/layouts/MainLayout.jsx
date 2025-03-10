@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const MainLayout = ({ children }) => {
@@ -57,7 +58,9 @@ const MainLayout = ({ children }) => {
 
           {/* Dashboard Overview */}
           <li>
-            <a href="/">Overview</a>
+            <Link href="/" legacyBehavior>
+              <a>Overview</a>
+            </Link>
           </li>
 
           {/* Livestock Management */}
@@ -65,16 +68,20 @@ const MainLayout = ({ children }) => {
             <span>Livestock</span>
           </li>
           <li>
-            <a href="/map">Livestock Map</a>
+            <Link href="/map" legacyBehavior>
+              <a>Livestock Map</a>
+            </Link>
           </li>
           <li>
-            <a href="/livestock">Health Monitoring</a>
+            <Link href="/health-monitoring" legacyBehavior>
+              <a>Health Monitoring</a>
+            </Link>
           </li>
           <li>
-            <a href="/manage">Manage Livestock</a>
+            <a href="/manage-livestock">Manage Livestock</a>
           </li>
           <li>
-            <a href="/headers">Manage Headers</a>
+            <a href="/manage-headers">Manage Headers</a>
           </li>
 
           {/* Alerts & History */}
@@ -82,8 +89,49 @@ const MainLayout = ({ children }) => {
             <span>Alerts</span>
           </li>
           <li>
-            <a href="/alerts">Alerts History</a>
+            <Link href="/weather-hazard-alerts" legacyBehavior>
+              <a>Weather Hazard Alerts</a>
+            </Link>
+            <Link href="/alerts" legacyBehavior>
+              <a>Alerts History</a>
+            </Link>
           </li>
+
+          {/* Alerts & History */}
+          <li className="menu-title">
+            <span>Geofencing</span>
+          </li>
+          <li>
+            <Link href="/geofencing" legacyBehavior>
+              <a>Set Geofences</a>
+            </Link>
+            <Link href="/movement-patterns" legacyBehavior>
+              <a>Movement Patterns</a>
+            </Link>
+          </li>
+
+          {/* Alerts & History */}
+          <li className="menu-title">
+            <span>Users</span>
+          </li>
+          <li>
+            <Link href="/staff" legacyBehavior>
+              <a>Manage Staff</a>
+            </Link>
+          </li>
+
+          {/* Footer Credits */}
+          <div className="mt-auto p-4 text-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Bhekumuzi Tshuma</p>
+            <a
+              href="https://www.linkedin.com/in/bhekumuzitshuma/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-600 hover:underline"
+            >
+              Connect on LinkedIn
+            </a>
+          </div>
         </ul>
       </div>
     </div>
